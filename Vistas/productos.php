@@ -30,7 +30,7 @@ include "../Procesos/conection.php";
                 <a class="nav-link text-white" href="#">SALIR</a>
             </li>
 			<li class="nav-item">
-                <a class="nav-link text-white" href="../Vistas/listar.php">RESERVAS</a>
+                <a class="nav-link text-white" href="../Vistas/pedidos.php">RESERVAS</a>
             </li>
         </ul>
     </div>

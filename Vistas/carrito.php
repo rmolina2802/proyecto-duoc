@@ -30,7 +30,7 @@ include "../Procesos/conection.php";
                 <a class="nav-link text-white" href="#">SALIR</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="../Vistas/listar.php">RESERVAS</a>
+                <a class="nav-link text-white" href="../Vistas/pedidos.php">RESERVAS</a>
             </li>
         </ul>
     </div>
@@ -68,6 +68,7 @@ $r = $products->fetch_object();
 	<td><?php echo $r->name;?></td>
 	<td>$ <?php echo $r->price; ?></td>
 	<td>$ <?php echo $c["q"]*$r->price; ?></td>
+    <td><?php echo $c["q"]+$c["q"]; ?> </td>
 	<td style="width:260px;">
 	<?php   
 	$found = false;
@@ -78,6 +79,7 @@ $r = $products->fetch_object();
 </tr>
 <?php endforeach; ?>
 </table>
+
 
 <form class="form-horizontal" method="post" action="../Procesos/process.php">
   <div class="form-group">

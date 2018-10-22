@@ -11,10 +11,9 @@ $products = $con->query("select * from product where id=$c[product_id]");
 $r = $products->fetch_object();
 
 $q1 = $con->query("insert into cart_product(product_id,q,cart_id) value($c[product_id],$c[q],$cart_id)");
-$q2 = $con->query("insert into pedido(correo, cantidad, descripcion, precio) values (\"$_POST[email]\",\"$c[q]\",\"$c[name]\" , \"$c[price]\")");
+$q2 = $con->query("insert into pedido(correo, cantidad, nombre, total) value (\"$_POST[email]\",$c[q],\"$c[name]$r->name\", $c[q]*$r->price)");
 }
 unset($_SESSION["cart"]);
 }
 }
 print "<script>alert('Venta procesada exitosamente');window.location='../Vistas/productos.php';</script>";
-?>
